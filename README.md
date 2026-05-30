@@ -67,13 +67,14 @@ project_updates/
 pip install -r requirements.txt
 ```
 
-### 2. Download price data
-Edit the `tickers` list in `Data/data_yf.py` (Shanghai: `600909.SS`, Shenzhen: `002390.SZ`), then:
-```bash
-cd project_updates
-python3 Data/data_yf.py
-```
-Output: `Data/latest_data/{TICKER}.csv` (columns: `date`, `close`, adjusted)
+### 2. Prepare price data
+Each stock requires a CSV file placed at `Data/latest_data/{TICKER}.csv` (6-digit code only, e.g. `600909.csv`).
+**Required CSV format:**
+```csv
+date,close
+2021-01-04,12.34
+2021-01-05,12.56
+Place CSV files directly into Data/latest_data/, following the format above. Ensure close prices are adjusted (unadjusted prices will bias the GARCH estimation).
 
 ### 3. Configure
 Edit `Vol/backtest/config.py` — the **only file you need to change**:
@@ -128,6 +129,6 @@ See [`Documents/vol_pipeline_step_map.csv`](Documents/vol_pipeline_step_map.csv)
 
 ## Notes
 
-- **Data not included**: stock price CSVs and market-cap snapshots are not tracked in this repository. Download them using the provided scripts.
+- **Data not included**: stock price CSVs and market-cap data are not tracked in this repository. Download them in advance.
 - **Results not included**: all output files in `Results/` are generated and excluded from version control.
 - All pipeline parameters are centralised in `Vol/backtest/config.py` — no other file needs to be edited for a standard run.

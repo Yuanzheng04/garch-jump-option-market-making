@@ -1,0 +1,7 @@
+numpy
+pandas
+scipy
+matplotlib
+yfinance
+curl_cffi
+python-docx

@@ -1,0 +1,43 @@
+# ── Root-level files that should not be tracked ───────────────────────────────
+/*.csv
+/*.docx
+/*.xlsx
+/*.pdf
+/*.pptx
+/*.png
+/*.zip
+
+# ── Data: keep folder structure only, no actual files ────────────────────────
+Data/*.py
+Data/*.csv
+Data/*.xlsx
+Data/latest_data/
+
+# ── Results: keep folder placeholder only ────────────────────────────────────
+Results/*
+!Results/.gitkeep
+
+# ── Old result directories ────────────────────────────────────────────────────
+Results_old/
+result/
+
+# ── Vol root: exclude all loose files, keep only backtest/ subfolder ──────────
+Vol/*.py
+Vol/*.csv
+Vol/*.png
+Vol/*.zip
+Vol/*.docx
+
+# ── Documents: keep only the step map ────────────────────────────────────────
+Documents/*
+!Documents/vol_pipeline_step_map.csv
+
+# ── Python cache ──────────────────────────────────────────────────────────────
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+
+# ── macOS ─────────────────────────────────────────────────────────────────────
+.DS_Store
+.AppleDouble

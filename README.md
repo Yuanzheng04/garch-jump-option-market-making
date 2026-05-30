@@ -23,7 +23,7 @@ Stock prices  →  GARCH+Jump MLE  →  MC backtest  →  HE statistics  →  Bi
   - *S4-11*: σ\_HE uncertainty overlay with OTM floor → final spread width
   - *S4-12*: Butterfly no-arbitrage fix
 - **Cross-stock analysis**: HE bias heatmaps, Spearman rank correlation with market cap
-- **Market-cap stratified stock selection** (20 equal-count bins from external snapshot)
+- **Market-cap stratified stock selection** (20 stocks sampled across the A-share universe (Shanghai & Shenzhen), selected by dividing all eligible stocks into 20 equal-count market-cap bins and drawing one stock from each bin — ensuring broad coverage across the full market-cap spectrum.)
 
 ## Project Structure
 
